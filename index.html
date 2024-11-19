@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            background-color: #000;
+            color: white;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: rgb(24, 4, 95);
+            height: 6.4cm;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0;
+        }
+        .logo {
+            margin: 0;
+        }
+        .logo img {
+            width: 140px;
+            height: auto;
+        }
+        .header-text {
+            text-align: left;
+            margin-top: 10px;
+        }
+        nav {
+            background-color: rgb(17, 0, 80);
+            padding: 10px;
+        }
+        .nav-list {
+            list-style-type: none;
+            display: flex;
+            justify-content: flex-end;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-item {
+            margin-left: 20px;
+            cursor: pointer;
+        }
+        .nav-item a {
+            color: whitesmoke;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .nav-item a:hover,
+        .nav-item a.active {
+            background-color: aqua;
+            transform: scale(1.05);
+        }
+        .content {
+            display: none; /* Initially hide all content sections */
+            margin-top: 20px;
+        }
+        .contact-section {
+            padding: 20px;
+        }
+        .contact-icons {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 20px;
+        }
+        .contact-icons a {
+            color: white; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            width: 50px; 
+            height: 50px; 
+            border-radius: 50%; 
+            background-color: green; 
+            transition: background-color 0.3s ease; 
+        }
+        .contact-icons a:hover {
+            background-color: darkgreen; 
+        }
+        .contact-icons i {
+            font-size: 24px; 
+            color:white; 
+        }
+        /* Styles for service containers */
+        .container {
+            display: flex; 
+            justify-content: space-between; 
+            margin-top: 20px; 
+        }
+        .left, .center, .right { 
+           flex: 1; 
+           text-align:left; 
+           font-size :18px; 
+       }
+       .center { 
+           text-align:center; 
+       }
+       .right { 
+           text-align:right; 
+       } 
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+             <img src="my logo.png.png" width="140" height="130">
+         </div>
+         <div style="width:auto;margin:auto;">
+             <span style="font-size:2em;"><b>MICHAEL HENRY MUEMA</b></span><br><br>
+             <span style="font-size:1.4em;"><b><center>IT Essential 💻💻</center></b></span><br>
+         </div>
+    </header><P></P>
+    <nav>
+         <ul class="nav-list">
+             <li class="nav-item" onclick="toggleContent('home-content', this)"><a href="#"><i class="fa fa-home"></i><font size="4">Home</font></a></li>
+             <li class="nav-item" onclick="toggleContent('services-content', this)"><a href="#"><i class="fa fa-cogs"></i><font size="4">Services</font></a></li>
+             <li class="nav-item" onclick="toggleContent('about-content', this)"><a href="#"><i class="fa fa-info-circle"></i><font size="4">About</font></a></li>
+             <li class="nav-item" onclick="toggleContent('contact-content', this)"><a href="#"><i class="fa fa-envelope"></i><font size="4">Contact</font></a></li>
+         </ul>
+     </nav>
+
+     <!-- Content Sections -->
+     <div id="home-content" class="content">
+         <font color="white">
+             <h2><font color="grey">Welcome to My Portfolio, Home of Tech Solutions.</font></h2>
+             <em><font color="grey">Your comfort is My priority✌</font></u></em><br><br>
+             <p><br>Hi, i'm Henry,<br> 
+                An IT enthusiast with a passion for Programming, Networking and later on Cyber Security.
+                I provide top-notch Tech improvement solutions tailored to my client needs.<br> 
+                 Dive into my portfolio to explore the skills i'm building as i pursue my career in IT.</p>
+         </font>
+     </div>
+
+     <div id="services-content" class="content">
+         <font color="white">
+             <h2><font color="grey">My Services</font></h2><br>
+             <p>I offer a variety of IT services designed to help businesses and individuals secure their digital assets, 
+                optimize their network systems, and develop robust applications.<br>
+                Below are the main services I specialize in:
+             </p>
+         </font><P></P><br><br><p></p>
+
+         <!-- First Row of Services -->
+         <div class="container">
+             <div class="left">
+                 <img src="software.png.png" width="360" height="220"><br><br>
+                 <label for="text"><a href="#"><i><font color="cyan"><font size="2">Software Development</a></font></font></i></label>
+             </div>
+             <div class="center">
+                 <img src="programming.png.png" width="360" height="220"><br><br>
+                 <label for="text"><a href="#"><i><font color="cyan"><font size="2"><center>Programming</center></a></font></font></i></label>
+             </div>
+             <div class="right">
+                 <img src="networking.png.png" width="360" height="220"><br><br>
+                 <label for="text"><a href="#"><i><font color="cyan"><font size="2"><center>Networking</center></a></font></font></i></label>
+             </div>
+         </div><P></P><br>
+
+         <!-- Second Row of Services -->
+         <div class="container">
+             <div class="left">
+                 <img src="IT Consultancy.png.png" width="360" height="220"><br><br>
+                 <label for="text"><a href="#"><i><font color="cyan"><font size="2">IT Consultancy</a></font></font></i></label>
+             </div>
+             <div class="center">
+                 <img src="web design.png.png" width="360" height="220"><br><br>
+                 <label for="text"><a href="#"><i><font color="cyan"><font size="2"><center>Web Designing</center></a></font></font></i></label>
+             </div>
+             <div class="right">
+                 <img src="mobile app development.png.png" width="360" height="220"><br><br>
+                 <label for="text"><a href="#"><i><font color="cyan"><font size="2"><center>Mobile App Development</center></a></font></font></i></label>
+             </div>
+         </div><P></P><br>
+
+         <!-- Third Row of Services -->
+         <div class="container">
+             <div class="left">
+                <img src="software-update-installation-upgrade.webp" width="360" height="220"><br><br>
+                <label for="text"><a href="#"><i><font color="cyan"><font size="2">software-updating-upgrading</a></font></font></i></label>
+             </div>
+             
+             <div class="center">
+               <img src="hardware and software support.png.png" width="360" height="220"><br><br>
+               <label for="text"><a href="#"><i><font color="cyan"><font size="2"><center>Computer Hardware & Software Support</center></a></font></font></i></label>
+             </div>
+
+             <div class="right">
+                <img src="tech support.png.png" width="360" height="220"><br><br>
+                <label for="text"><a href="#"><i><font color="cyan"><font size="2"><center>Tech Support</center></a></font></font></i></label>
+                <P></P><br>
+             </div>  
+         </div>  
+     </div>
+
+     <!-- About Section -->
+     <div id='about-content' class='content'>
+         <font color='white'>
+             <h2><font color="grey">About Me</font></h2><br>
+             <p>I'm an IT enthusiast with a strong interest in all IT fields. 
+                My journey in tech began with a fascination for how systems connect and communicate, 
+                leading me to pursue IT Essentials and constantly expand my skills in the ever evolving world of Technology.
+                 Currently, I'm focusing on exploring AI Integration for websites, aiming to create smarter, 
+                 more secure web applications. 
+                 My passion resonates in technology and I'm dedicated to providing the best solutions for my clients.
+                  Outside my work, I enjoy exploring the latest in tech news, participating in online or rather community tech forums.
+                  <P></P><br> 
+                  Thanks for visiting my Portfolio - I'm excited to share my journey and projects with you !</p>  
+         </font>  
+     </div>
+
+     <!-- Contact Section -->
+     <div id='contact-content' class='content contact-section'>  
+         <font color='white'><h2><font color="grey">Contact Me</font></h2><br><br>
+             <P>I'm always open to discussing tech, collaborating on projects or answering any questions about my work.<br>
+                Whether you are looking to connect for any service, collaborate, or just chat about all things IT, or advice me dont hesitate
+                to get in touch.<br>
+                Let me know if you'd like this adjusted or if there are other platforms you'd like included !<br>
+                I look forward to connecting !<br><br>
+                Feel free to reach out on any of the following channels at the right pane;
+             </P> 
+             <div class='contact-icons'>  
+                 <!-- Updated phone icon -->  
+                 <a href='tel:+0737938057' title='Call'><i class='fas fa-phone-alt'></i></a> <!-- Call -->  
+                 <!-- SMS Icon -->  
+                 <a href='sms:+0737938057' title='Send SMS'><i class='fas fa-sms'></i></a> <!-- SMS -->  
+                 <!-- Email Icon -->  
+                 <a href='mailto:henrymuema612@gmail.com' title='Email'><i class='fas fa-envelope'></i></a> <!-- Email -->  
+                 <!-- WhatsApp Icon -->  
+                 <a href='https://wa.me/0737938057' title='WhatsApp'><i class='fab fa-whatsapp'></i></a> <!-- WhatsApp -->  
+                 <!-- Facebook Messenger link -->  
+                 <a href='https://facebook.com/HarryHank' title='Facebook Page Harry Hank'><i class='fab fa-facebook'></i></a> <!-- Facebook Messenger -->  
+              </div>  
+          </font>  
+      </div>
+
+      <!-- JavaScript for toggling content -->
+      <script>  
+          // Function to toggle content sections and maintain active state
+          function toggleContent(contentId, clickedItem) {  
+              // Hide all content sections
+              const contents = document.querySelectorAll('.content');  
+              contents.forEach(content => { content.style.display = 'none'; });  
+
+              // Show the selected content section
+              const selectedContent = document.getElementById(contentId);  
+              if (selectedContent) { selectedContent.style.display = 'block'; }  
+
+              // Remove active class from all nav items
+              const navItems = document.querySelectorAll('.nav-item a');  
+              navItems.forEach(item => { item.classList.remove('active'); });  
+
+              // Add active class to clicked nav item
+              const anchorTag = clickedItem.querySelector('a');  
+              anchorTag.classList.add('active');  
+          }  
+      </script>  
+   </body>   
+</html>   
