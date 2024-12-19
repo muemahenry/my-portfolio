@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <title>My Portfolio</title>
+
+    <style>
+
+        body {
+
+            background-color: #000;
+
+            color: white;
+
+            font-family: sans-serif;
+
+            margin: 0;
+
+            padding: 0;
+
+            position: relative;
+
+        }
+
+        header {
+
+            background-color: rgb(24, 4, 95);
+
+            height: 6.4cm;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+        }
+
+        .logo img {
+
+            width: 100px;
+
+            height: auto;
+
+            margin-bottom: 10px;
+
+        }
+
+        nav {
+
+            background-color: rgb(17, 0, 80);
+
+            padding: 10px;
+
+        }
+
+        .nav-list {
+
+            list-style-type: none;
+
+            display: flex;
+
+            justify-content: center;
+
+            margin: 0;
+
+            padding: 0;
+
+        }
+
+        .nav-item {
+
+            margin: 0 15px;
+
+            cursor: pointer;
+
+        }
+
+        .nav-item a {
+
+            color: whitesmoke;
+
+            text-decoration: none;
+
+            font-size: 16px;
+
+            padding: 10px 15px;
+
+            border-radius: 5px;
+
+            transition: background-color 0.3s ease, transform 0.3s ease;
+
+        }
+
+        .nav-item a:hover,
+
+        .nav-item a.active {
+
+            background-color: aqua;
+
+            transform: scale(1.05);
+
+        }
+
+        .content {
+
+            display: none;
+
+            margin: 20px;
+
+            text-align: center;
+
+        }
+
+        .content h2 {
+
+            color: grey;
+
+        }
+
+        .container {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 20px;
+
+        }
+
+        .container div {
+
+            flex: 1 1 calc(33.33% - 20px);
+
+            max-width: 300px;
+
+            text-align: center;
+
+        }
+
+        .container img {
+
+            width: 100%;
+
+            height: auto;
+
+            border-radius: 5px;
+
+        }
+
+        .container label {
+
+            margin-top: 10px;
+
+            font-size: 16px;
+
+            color: cyan;
+
+        }
+
+        
+
+        /* Styling for the contact icons aligned to the right */
+
+        .contact-icons {
+
+            display: none; /* Initially hidden */
+
+            text-align: center; 
+
+            margin-top: 20px; /* Space between the text and icons */ 
+
+            position: absolute; 
+
+            right: 20px; /* Align the icons to the right of the page */ 
+
+        }
+
+        
+
+        .contact-icons a {
+
+            color: white; 
+
+            display: block; /* Stack icons vertically */ 
+
+            width: 50px; 
+
+            height: 50px; 
+
+            border-radius: 50%; 
+
+            background-color: green; 
+
+            margin: 10px auto; /* Center the icons horizontally */ 
+
+            transition: background-color 0.3s ease; 
+
+            line-height: 50px; /* Vertically center the icon inside the circle */ 
+
+        }
+
+
+
+        .contact-icons a:hover { 
+
+          background-color: darkgreen; 
+
+        }
+
+
+
+        .contact-icons i { 
+
+          font-size: 24px; 
+
+          color:white; 
+
+          text-align:center; 
+
+          vertical-align:center; /* Center the icon inside the circle */ 
+
+        }
+
+
+
+        /* Tooltip styles */
+
+        .tooltip {
+
+          position: relative; 
+
+          display:inline-block; 
+
+          cursor:pointer; /* Change cursor to pointer */
+
+        }
+
+
+
+        .tooltip .tooltiptext {
+
+          visibility:hidden; 
+
+          width:auto; /* Adjust width as needed */
+
+          background-color:black; 
+
+          color:white; 
+
+          text-align:center; 
+
+          border-radius:.5rem; 
+
+          padding:.5rem; 
+
+          position:absolute; 
+
+          z-index=1; 
+
+          bottom=125%; /* Position above the icon */
+
+          left=50%; 
+
+          margin-left=-30px; /* Center the tooltip */
+
+          opacity=0; /* Make it transparent initially */
+
+          transition=opacity .3s ease-in-out; /* Smooth transition for visibility */
+
+         }
+
+
+
+         .tooltip:hover .tooltiptext {
+
+           visibility=visible; /* Show tooltip on hover */
+
+           opacity=1; /* Make it visible */
+
+         }
+
+
+
+         @media (max-width=768px) { 
+
+           .container div { flex=1 1 calc(50% - 20px); } 
+
+         } 
+
+
+
+         @media (max-width=480px) { 
+
+           .container div { flex=1 1 100%; } 
+
+         } 
+
+
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+<header>
+    
+
+    <div class="logo">
+
+      <img src="my logo.png.png" alt="Logo Placeholder">
+
+    </div>
+
+    <h1>MICHAEL HENRY MUEMA</h1>
+
+    <p>IT Essential 💻 💻</p>
+
+</header><P></P>
+
+
+
+<nav>
+
+    <ul class="nav-list">
+
+        <li class="nav-item" onclick="toggleContent('home-content', this)">
+
+            <a href="#"><i class="fas fa-home"></i> Home</a>
+
+        </li>
+
+        <li class="nav-item" onclick="toggleContent('services-content', this)">
+
+            <a href="#"><i class="fas fa-cogs"></i> Services</a>
+
+        </li>
+
+        <li class="nav-item" onclick="toggleContent('about-content', this)">
+
+            <a href="#"><i class="fas fa-user"></i> About</a>
+
+        </li>
+
+        <li class="nav-item" onclick="toggleContent('contact-content', this)">
+
+            <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+
+        </li>
+
+    </ul>
+
+</nav>
+
+
+
+<div id="home-content" class="content"><br>
+
+    <h2>Welcome to My Portfolio</h2><br>
+
+    <p>Hi, I'm Henry<br> An IT enthusiast with a passion for Programming, Networking, and Cybersecurity. I provide top-notch tech improvement solutions tailored to my client needs.<br> Dive into my portfolio to explore my skills I am building as I pursue my career in IT!</p>
+
+</div>
+
+
+
+<div id="services-content" class="content"><br>
+
+    <h2>My Services</h2><br>
+
+    <p>I offer a variety of IT services designed to help businesses and individuals secure their digital assets, optimize their network systems, and develop robust applications.</p>
+
+    <p>Below are the main services I specialize in:</p><br><br><br><br>
+
+    <style>
+
+    body { display: flex; justify-content: center; flex-direction: column; }
+
+    .img-container { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+
+    .img-item { display: flex; flex-direction: column; align-items: center; }
+
+    img { width: 320px; height: 200px; object-fit: cover; }
+
+</style>
+
+<!-- First Section -->
+
+<div class="img-container">
+
+<div class="img-item">
+
+    <img src="software.png.png">
+
+    <p><i><font color="cyan"><font size="2">Software Development</font></font></i></p>
+
+</div>
+
+<div class="img-item">
+
+    <img src="programming.png.png">
+
+    <p><i><font color="cyan"><font size="2">Programming</font></font></i></p>
+
+</div>
+
+<div class="img-item">
+
+    <img src="networking.png.png">
+
+    <p><i><font color="cyan"><font size="2">Networking</font></font></i></p>
+
+</div>
+
+</div>
+
+
+
+<!-- Second Section -->
+
+<div class="img-container">
+
+<div class="img-item">
+
+    <img src="IT Consultancy.png.png">
+
+    <p><i><font color="cyan"><font size="2">IT Consultation</font></font></i></p>
+
+</div>
+
+<div class="img-item">
+
+    <img src="web designing.png.png">
+
+    <p><i><font color="cyan"><font size="2">Web Designing</font></font></i></p>
+
+</div>
+
+<div class="img-item">
+
+    <img src="mobile app development.png.png">
+
+    <p><i><font color="cyan"><font size="2">Mobile App Development</font></font></i></p>
+
+</div>
+
+</div>
+
+
+
+<!-- Third Section -->
+
+<div class="img-container">
+
+<div class="img-item">
+
+    <img src="software-update-installation-upgrade.png.png.webp">
+
+    <p><i><font color="cyan"><font size="2">Software Update-Installation-Upgrade</font></font></i></p>
+
+</div>
+
+<div class="img-item">
+
+    <img src="hardware and software support.png.png">
+
+    <p><i><font color="cyan"><font size="2">Computer Hardware and Software Support</font></font></i></p>
+
+</div>
+
+<div class="img-item">
+
+    <img src="tech support.png.png">
+
+    <p><i><font color="cyan"><font size="2">Tech Support</font></font></i></p>
+
+</div>
+
+</div></div>
+
+
+
+<div id="about-content" class="content"><br>
+
+    <h2>About Me</h2><br>
+
+    <p>I'm an IT enthusiast with a strong interest in all IT fields. My journey in tech began with a fascination for how systems connect and communicate, leading me to pursue an IT career and constantly expand my skills in the ever-evolving world of Technology. Currently, I am focusing on exploring AI integration for websites, aiming to create smarter and more secure web applications. My passion resonates in Technology and I am dedicated to providing the best solutions for my clients. Outside my work, I enjoy exploring the latest in tech news and participating in online tech forums.</p><br>
+
+    <p>Thanks for visiting my portfolio - I'm excited to share my journey and projects with you!</p>
+
+</div>
+
+</div>
+
+
+
+
+
+<div id="contact-content" class="content"><br>
+
+    <h2>Contact Me</h2><br>
+
+    <p>I am always open to discussing tech, collaborating on projects or answering any questions about my work.<br> Whether you are looking to connect for any service, collaborate or just chat about all things IT or advise me on any idea, don't hesitate to get in touch.<br> I look forward to connecting!</p><br>
+
+    <p>Feel free to reach me out on the following channels on your right pane:</p><br>
+
+
+
+<div class="contact-icons" id="contact-icons"> <!-- Icons are now vertically aligned with tooltips -->
+
+   <!-- Updated phone icon -->  
+
+   <a href='tel:+0737938057' title='Call'><i class='fas fa-phone-alt'></i></a> <!-- Call -->  
+
+   <!-- SMS Icon -->  
+
+   <a href='sms:+0737938057' title='Send SMS'><i class='fas fa-sms'></i></a> <!-- SMS -->  
+
+   <!-- Email Icon -->  
+
+   <a href='mailto:henrymuema612@gmail.com' title='Email'><i class='fas fa-envelope'></i></a> <!-- Email -->  
+
+   <!-- WhatsApp Icon -->  
+
+   <a href='https://wa.me/0737938057' title='WhatsApp'><i class='fab fa-whatsapp'></i></a> <!-- WhatsApp -->  
+
+   <!-- Facebook Messenger link -->  
+
+   <a href='https://facebook.com/HarryHank' title='Facebook Page Harry Hank'><i class='fab fa-facebook'></i></a> <!-- Facebook Messenger -->  
+
+</div>
+
+
+
+<script>
+
+// Function to toggle content sections
+
+function toggleContent(contentId, clickedItem) {
+
+    const contents = document.querySelectorAll('.content');
+
+    contents.forEach(content => content.style.display = 'none');
+
+    
+
+    document.getElementById(contentId).style.display = 'block';
+
+    
+
+    const navItems = document.querySelectorAll('.nav-item a');
+
+    navItems.forEach(item => item.classList.remove('active'));
+
+    
+
+    clickedItem.querySelector('a').classList.add('active');
+
+    
+
+    // Show contact icons when "Contact" is clicked
+
+    if (contentId === 'contact-content') {
+
+      document.getElementById('contact-icons').style.display = 'block'; // Show contact icons below the text
+
+   } else {
+
+      document.getElementById('contact-icons').style.display = 'none'; // Hide the icons in other sections
+
+   }
+
+}
+
+
+
+// Show home content by default
+
+document.getElementById('home-content').style.display = 'none'; // Hide home content by default
+
+</script>
+
+
+
+</body>
+
+</html>
